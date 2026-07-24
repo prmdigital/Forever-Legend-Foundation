@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Placeholder photo">
+  <defs>
+    <linearGradient id="lwash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF9933" stop-opacity="0.18"/>
+      <stop offset="0.5" stop-color="#FFFDF8" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#138808" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#F1EEE4"/>
+  <rect width="1200" height="675" fill="url(#lwash)"/>
+  <g transform="translate(600,330)" opacity="0.13" stroke="#0B1F63" stroke-width="5" fill="none">
+    <circle r="170"/>
+    <circle r="15" fill="#0B1F63" stroke="none"/>
+    <line x1="0" y1="-170" x2="0" y2="170"/>
+    <line x1="-170" y1="0" x2="170" y2="0"/>
+    <line x1="-120" y1="-120" x2="120" y2="120"/>
+    <line x1="-120" y1="120" x2="120" y2="-120"/>
+  </g>
+  <rect x="0" y="648" width="1200" height="9" fill="#FF9933"/>
+  <rect x="0" y="657" width="1200" height="9" fill="#0B1F63"/>
+  <rect x="0" y="666" width="1200" height="9" fill="#138808"/>
+  <text x="600" y="330" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, serif" font-size="24" fill="#5B6478">
+    Replace with photo — 1200 × 675
+  </text>
+</svg>

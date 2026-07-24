@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Placeholder hero photo">
+  <defs>
+    <linearGradient id="heroWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF9933" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#FFFDF8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#138808" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="#F1EEE4"/>
+  <rect width="1600" height="1200" fill="url(#heroWash)"/>
+  <g transform="translate(800,600)" opacity="0.14" stroke="#0B1F63" stroke-width="6" fill="none">
+    <circle r="330"/>
+    <circle r="26" fill="#0B1F63" stroke="none"/>
+    <g id="spokes"></g>
+    <line x1="0" y1="-330" x2="0" y2="330"/>
+    <line x1="-330" y1="0" x2="330" y2="0"/>
+    <line x1="-233" y1="-233" x2="233" y2="233"/>
+    <line x1="-233" y1="233" x2="233" y2="-233"/>
+    <line x1="-126" y1="-309" x2="126" y2="309"/>
+    <line x1="126" y1="-309" x2="-126" y2="309"/>
+    <line x1="-309" y1="-126" x2="309" y2="126"/>
+    <line x1="-309" y1="126" x2="309" y2="-126"/>
+  </g>
+  <rect x="0" y="1160" width="1600" height="14" fill="#FF9933"/>
+  <rect x="0" y="1174" width="1600" height="13" fill="#0B1F63"/>
+  <rect x="0" y="1187" width="1600" height="13" fill="#138808"/>
+  <text x="800" y="600" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, serif" font-size="34" fill="#5B6478">
+    Replace with photo — 1600 × 1200
+  </text>
+</svg>
