@@ -273,9 +273,6 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   display:flex; align-items:center; gap:18px;
 }
 .objective-item summary::-webkit-details-marker{ display:none; }
-.objective-item .num{
-  font-family: var(--font-display); font-weight:700; color: var(--line); font-size:1.4rem; width:34px; flex-shrink:0;
-}
 .objective-item summary .titles{ flex:1; min-width:0; }
 .objective-item summary h3{ font-size:1.05rem; margin-bottom:2px; }
 .objective-item summary .tagline{ font-size:13px; color: var(--ink-soft); font-weight:600; }
@@ -286,15 +283,10 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .objective-item[open] .chev{ transform: rotate(180deg); }
 .objective-item .content{ padding: 0 24px 26px 94px; }
 .objective-item .content p{ color: var(--ink-soft); font-size:14.5px; margin:0 0 14px; }
-.objective-item .content ul{ display:grid; grid-template-columns:1fr 1fr; gap:8px 24px; margin-bottom:14px; }
-.objective-item .content ul li{ font-size:14px; padding-left:18px; position:relative; }
-.objective-item .content ul li::before{ content:"—"; position:absolute; left:0; color: var(--saffron-deep); }
 .objective-item .content .closing{ font-weight:700; color: var(--navy); font-style:normal; }
 @media (max-width: 640px){
   .objective-item summary{ gap:12px; padding: 16px; }
   .objective-item .content{ padding: 0 16px 22px 16px; }
-  .objective-item .content ul{ grid-template-columns:1fr; }
-  .objective-item .num{ display:none; }
 }
 
 /* ---------------- Programs chip grid ---------------- */
