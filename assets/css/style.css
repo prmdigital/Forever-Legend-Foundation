@@ -218,14 +218,6 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .hero .cta-row{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .hero-media{ position:relative; }
 .hero-media img{ border-radius: var(--radius); box-shadow: var(--shadow-card); }
-.hero-media .badge{
-  position:absolute; top:-18px; right:-18px;
-  background: var(--paper); border:1px solid var(--line); border-radius:50%;
-  width:92px; height:92px; display:flex; align-items:center; justify-content:center;
-  flex-direction:column; text-align:center; box-shadow: var(--shadow-card);
-  font-family: var(--font-display); font-weight:700; color: var(--navy);
-}
-.hero-media .badge span{ font-family: var(--font-body); font-weight:600; font-size:9.5px; letter-spacing:0.05em; text-transform:uppercase; color: var(--ink-soft); }
 
 @media (max-width: 860px){
   .hero .container{ grid-template-columns: 1fr; }
@@ -234,6 +226,12 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 
 /* ---------------- About / mission ---------------- */
 .about-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items:start; }
+.about-media-logo{
+  display:flex; align-items:center; justify-content:center;
+  background: var(--paper-dim); border:1px solid var(--line); border-radius: var(--radius);
+  padding: 40px;
+}
+.about-media-logo img{ width:100%; max-width:300px; }
 .about-copy p{ color: var(--ink-soft); font-size:1.02rem; margin: 0 0 16px; }
 .vision-callout{
   margin-top: 30px; padding: 22px 26px; border-left: 3px solid var(--saffron);
