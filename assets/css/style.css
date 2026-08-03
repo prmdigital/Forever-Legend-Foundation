@@ -225,20 +225,26 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 }
 
 /* ---------------- About / mission ---------------- */
-.about-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items:start; }
+.about-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items:stretch; }
 .about-media-logo{
   display:flex; align-items:center; justify-content:center;
   background: var(--paper-dim); border:1px solid var(--line); border-radius: var(--radius);
-  padding: 40px;
+  padding: 40px; min-height: 260px;
+  background-image: radial-gradient(circle at 50% 40%, rgba(255,153,51,0.08), transparent 60%);
 }
-.about-media-logo img{ width:100%; max-width:300px; }
+.about-media-logo img{ width:100%; max-width:280px; filter: drop-shadow(0 10px 22px rgba(11,31,99,0.12)); }
 .about-copy p{ color: var(--ink-soft); font-size:1.02rem; margin: 0 0 16px; }
 .vision-callout{
-  margin-top: 30px; padding: 22px 26px; border-left: 3px solid var(--saffron);
-  background: var(--saffron-tint); border-radius: var(--radius-sm);
+  margin-top: 30px; padding: 26px 28px; border-left: 3px solid var(--saffron);
+  background: var(--saffron-tint); border-radius: var(--radius); box-shadow: var(--shadow-card);
 }
-.vision-callout h4{ font-size: 12.5px; text-transform:uppercase; letter-spacing:0.06em; color: var(--saffron-deep); font-family: var(--font-body); margin-bottom:8px; }
-.vision-callout p{ margin:0; font-family: var(--font-display); font-size:1.15rem; color: var(--navy); font-weight:600; }
+.vision-callout h4{
+  display:flex; align-items:center; gap:8px;
+  font-size: 12.5px; text-transform:uppercase; letter-spacing:0.06em; color: var(--saffron-deep);
+  font-family: var(--font-body); margin-bottom:10px;
+}
+.vision-callout h4 svg{ width:16px; height:16px; stroke: var(--saffron-deep); fill:none; stroke-width:2; }
+.vision-callout p{ margin:0; font-family: var(--font-display); font-size:1.15rem; line-height:1.45; color: var(--navy); font-weight:600; }
 
 .mission-block{ margin-top: 34px; }
 .mission-block > h3{ font-size:1.1rem; margin-bottom:16px; }
