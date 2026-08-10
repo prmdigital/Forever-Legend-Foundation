@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 
@@ -300,31 +300,47 @@
       <h2>Stay Updated</h2>
       <p>Stay updated with our latest campaigns, programs, and foundation achievements.</p>
     </div>
-    <div class="news-clip-grid">
-      <article class="news-clip-card">
-        <img src="assets/img/news-tree-plantation-en.jpg" alt="Newspaper clipping: Forever Legend Foundation organises tree plantation drive in Sector 80, Mohali">
-        <div class="body">
-          <span class="dateline">Mohali &middot; Aug 2</span>
-          <h3>Forever Legend Foundation Organises Tree Plantation Drive in Sector 80, Mohali</h3>
-          <p>Foundation directors and volunteers planted saplings across Sector 80 and pledged ongoing care, reaffirming the Foundation's commitment to environmental awareness.</p>
-        </div>
-      </article>
-      <article class="news-clip-card">
-        <img src="assets/img/news-tree-plantation-pa.jpg" alt="Punjabi newspaper clipping of the same Mohali tree plantation drive">
-        <div class="body">
-          <span class="dateline">Punjabi Press &middot; Mohali</span>
-          <h3>ਫਾਰਏਵਰ ਲੈਜੰਡ ਫਾਊਂਡੇਸ਼ਨ ਵੱਲੋਂ ਸੈਕਟਰ-80, ਮੋਹਾਲੀ ਵਿਖੇ ਰੁੱਖ ਲਗਾਓ ਮੁਹਿੰਮ</h3>
-          <p>Regional Punjabi press coverage of the Sector 80 plantation drive, highlighting the Foundation's call for citizens to make tree planting a regular habit.</p>
-        </div>
-      </article>
-      <article class="news-clip-card">
-        <img src="assets/img/news-marathon-hi.jpg" alt="Hindi newspaper clipping mentioning Forever Legend Foundation's support for the Shaheed-e-Azam Bhagat Singh National Marathon">
-        <div class="body">
-          <span class="dateline">Fatehgarh Sahib &middot; Mar 27</span>
-          <h3>माहिलपुर में शहीद-ए-आज़म भगत सिंह नेशनल मैराथन में रिकॉर्ड भागीदारी</h3>
-          <p>Forever Legend Foundation was recognised among the supporting organisations for this anti-drug awareness marathon, which drew record participation.</p>
-        </div>
-      </article>
+    <!--
+      NEWS SLIDER — to add a new story, copy one <article class="news-clip-card"> block
+      below and paste it as the FIRST item (newest first). The slider arrows and dots
+      update themselves automatically; nothing else needs changing.
+    -->
+    <div class="news-slider" id="newsSlider">
+      <div class="news-track" tabindex="0" role="region" aria-label="News and events, scrollable">
+        <article class="news-clip-card">
+          <img src="assets/img/news-tree-plantation-en.jpg" alt="Newspaper clipping: Forever Legend Foundation organises tree plantation drive in Sector 80, Mohali">
+          <div class="body">
+            <span class="dateline">Mohali &middot; Aug 2</span>
+            <h3>Forever Legend Foundation Organises Tree Plantation Drive in Sector 80, Mohali</h3>
+            <p>Foundation directors and volunteers planted saplings across Sector 80 and pledged ongoing care, reaffirming the Foundation's commitment to environmental awareness.</p>
+          </div>
+        </article>
+        <article class="news-clip-card">
+          <img src="assets/img/news-tree-plantation-pa.jpg" alt="Punjabi newspaper clipping of the same Mohali tree plantation drive">
+          <div class="body">
+            <span class="dateline">Punjabi Press &middot; Mohali</span>
+            <h3>ਫਾਰਏਵਰ ਲੈਜੰਡ ਫਾਊਂਡੇਸ਼ਨ ਵੱਲੋਂ ਸੈਕਟਰ-80, ਮੋਹਾਲੀ ਵਿਖੇ ਰੁੱਖ ਲਗਾਓ ਮੁਹਿੰਮ</h3>
+            <p>Regional Punjabi press coverage of the Sector 80 plantation drive, highlighting the Foundation's call for citizens to make tree planting a regular habit.</p>
+          </div>
+        </article>
+        <article class="news-clip-card">
+          <img src="assets/img/news-marathon-hi.jpg" alt="Hindi newspaper clipping mentioning Forever Legend Foundation's support for the Shaheed-e-Azam Bhagat Singh National Marathon">
+          <div class="body">
+            <span class="dateline">Fatehgarh Sahib &middot; Mar 27</span>
+            <h3>माहिलपुर में शहीद-ए-आज़म भगत सिंह नेशनल मैराथन में रिकॉर्ड भागीदारी</h3>
+            <p>Forever Legend Foundation was recognised among the supporting organisations for this anti-drug awareness marathon, which drew record participation.</p>
+          </div>
+        </article>
+      </div>
+      <div class="news-controls" hidden>
+        <button type="button" class="news-arrow news-prev" aria-label="Previous news">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="news-dots" role="tablist" aria-label="News slides"></div>
+        <button type="button" class="news-arrow news-next" aria-label="Next news">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -451,6 +467,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

@@ -325,9 +325,22 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 @media (max-width: 900px){ .gallery-grid{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px){ .gallery-grid{ grid-template-columns: 1fr; } }
 
-/* ---------------- News & events ---------------- */
-.news-clip-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+/* ---------------- News & events slider ---------------- */
+.news-slider{ --news-gap: 26px; --news-per-view: 3; }
+.news-track{
+  display:flex; gap: var(--news-gap);
+  overflow-x:auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding: 4px 4px 14px;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.news-track::-webkit-scrollbar{ display:none; }
+.news-track:focus-visible{ outline: 3px solid var(--navy); outline-offset: 4px; border-radius: var(--radius); }
+@media (prefers-reduced-motion: reduce){ .news-track{ scroll-behavior:auto; } }
+
 .news-clip-card{
+  flex: 0 0 calc((100% - (var(--news-per-view) - 1) * var(--news-gap)) / var(--news-per-view));
+  scroll-snap-align:start;
   background: var(--paper); border:1px solid var(--line); border-radius: var(--radius);
   overflow:hidden; box-shadow: var(--shadow-card); display:flex; flex-direction:column;
 }
@@ -342,7 +355,33 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 }
 .news-clip-card h3{ font-size:1rem; line-height:1.35; margin-bottom:10px; }
 .news-clip-card p{ font-size:13.5px; color: var(--ink-soft); margin:0; }
-@media (max-width: 900px){ .news-clip-grid{ grid-template-columns: 1fr; max-width:420px; margin:0 auto; } }
+
+.news-controls{
+  display:flex; align-items:center; justify-content:center; gap:18px; margin-top: 26px;
+}
+.news-controls[hidden]{ display:none; }
+.news-arrow{
+  width:44px; height:44px; border-radius:50%; flex-shrink:0;
+  border:1px solid var(--line); background: var(--paper);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  transition: background .15s ease, border-color .15s ease, opacity .15s ease;
+}
+.news-arrow svg{ width:22px; height:22px; stroke: var(--navy); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.news-arrow:hover:not(:disabled){ background: var(--saffron-tint); border-color: var(--saffron); }
+.news-arrow:focus-visible{ outline: 3px solid var(--navy); outline-offset: 2px; }
+.news-arrow:disabled{ opacity:0.35; cursor:default; }
+
+.news-dots{ display:flex; align-items:center; gap:9px; }
+.news-dots button{
+  width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
+  border:none; background: var(--line); transition: background .15s ease, width .15s ease;
+}
+.news-dots button:hover{ background: var(--saffron); }
+.news-dots button[aria-selected="true"]{ background: var(--saffron); width:24px; border-radius:999px; }
+.news-dots button:focus-visible{ outline: 2px solid var(--navy); outline-offset: 2px; }
+
+@media (max-width: 1000px){ .news-slider{ --news-per-view: 2; } }
+@media (max-width: 700px){ .news-slider{ --news-per-view: 1; --news-gap: 18px; } }
 
 /* ---------------- Get involved ---------------- */
 .involved-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; margin-top: 36px; }
