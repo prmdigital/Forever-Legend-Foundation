@@ -346,17 +346,10 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 }
 .news-clip-card img{
   width:100%; height:340px; object-fit:contain; object-position:center top;
-  background: var(--paper-dim); border-bottom:1px solid var(--line);
+  background: var(--paper-dim);
 }
 /* Photographs fill the frame; newspaper clippings stay fully legible above. */
 .news-clip-card img.is-photo{ object-fit:cover; object-position:center; }
-.news-clip-card .body{ padding: 20px; }
-.news-clip-card .dateline{
-  display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;
-  color: var(--saffron-deep); margin-bottom:8px;
-}
-.news-clip-card h3{ font-size:1rem; line-height:1.35; margin-bottom:10px; }
-.news-clip-card p{ font-size:13.5px; color: var(--ink-soft); margin:0; }
 
 .news-controls{
   display:flex; align-items:center; justify-content:center; gap:18px; margin-top: 26px;
@@ -386,7 +379,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 @media (max-width: 700px){ .news-slider{ --news-per-view: 1; --news-gap: 18px; } }
 
 /* ---------------- Get involved ---------------- */
-.involved-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; margin-top: 36px; }
+.involved-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:22px; margin-top: 36px; }
 .involved-card{
   background: var(--paper); border-radius: var(--radius); padding: 28px;
   border:1px solid var(--line); text-align:left;
@@ -396,7 +389,46 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .involved-card ul{ margin: 0 0 18px; }
 .involved-card ul li{ font-size:13.5px; padding-left:16px; position:relative; margin-bottom:6px; color: var(--ink);}
 .involved-card ul li::before{ content:"—"; position:absolute; left:0; color: var(--saffron-deep); }
-@media (max-width: 900px){ .involved-grid{ grid-template-columns:1fr; } }
+
+/* Donation QR. .qr-frame sizes both the placeholder and the real <img>,
+   so swapping one for the other needs no further CSS changes. */
+/* The Donate card spans the full grid width and splits internally: copy on the
+   left, QR on the right, so the extra width is used instead of sitting empty. */
+.donate-card{
+  grid-column: 1 / -1;
+  display:grid; grid-template-columns: minmax(0,1fr) clamp(240px, 32%, 360px);
+  gap: 40px; align-items:center;
+}
+.donate-main{ display:flex; flex-direction:column; align-items:flex-start; }
+.donate-main .btn{ margin-top:4px; }
+.donate-qr{ display:flex; flex-direction:column; align-items:center; width:100%; }
+/* The frame fills its grid track and stays square, so the code scales with the
+   card instead of sitting small in a fixed box. */
+.qr-frame{
+  display:block; width:100%; max-width:360px; aspect-ratio:1;
+  border-radius: var(--radius); background: var(--paper);
+  border:1px solid var(--line); object-fit:contain; padding:12px;
+}
+.qr-frame.is-placeholder{
+  border:2px dashed var(--line); background: var(--paper-dim);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+}
+.qr-frame.is-placeholder svg{ width:72px; height:72px; fill: var(--navy); opacity:0.3; }
+.qr-frame.is-placeholder span{
+  font-size:11px; font-weight:700; letter-spacing:0.03em;
+  text-transform:uppercase; color: var(--ink-soft);
+}
+.qr-note{
+  font-size:12.5px; font-weight:700; color: var(--ink-soft);
+  margin:14px 0 0; text-align:center;
+}
+@media (max-width: 900px){
+  .involved-grid{ grid-template-columns:1fr; }
+  /* Not enough width for copy and QR side by side — stack and centre the code. */
+  .donate-card{ grid-template-columns:1fr; gap:28px; }
+  .donate-main{ align-items:stretch; }
+  .qr-frame{ max-width:300px; }
+}
 
 /* ---------------- Quote ---------------- */
 .pull-quote{ max-width: 760px; margin: 0 auto; text-align:center; }
@@ -417,7 +449,10 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .contact-form input:focus, .contact-form textarea:focus{ outline: 2px solid var(--saffron); outline-offset:1px; }
 .contact-form button{ justify-self:start; }
 .contact-list{ display:grid; gap:16px; margin-top:24px; }
-.contact-list li{ display:flex; gap:14px; align-items:flex-start; font-size:14.5px; }
+.contact-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; }
+/* Fixed-width icon column keeps every row's text starting at the same x,
+   regardless of the differing glyph widths of the emoji. */
+.contact-list .ci{ flex:0 0 22px; text-align:center; line-height:1.55; }
 @media (max-width: 860px){ .contact-grid{ grid-template-columns:1fr; } }
 
 /* ---------------- Footer ---------------- */
