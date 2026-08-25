@@ -50,7 +50,11 @@ body{
   line-height: 1.6;
 }
 
-img{ max-width:100%; display:block; }
+/* height:auto is required: the width/height attributes on <img> act as
+   presentational hints that set CSS height, which would otherwise override
+   the sizing rules below and stretch every image. The attributes stay so the
+   browser can reserve the right space before the file loads (no layout shift). */
+img{ max-width:100%; height:auto; display:block; }
 a{ color: inherit; text-decoration:none; }
 ul{ margin:0; padding:0; list-style:none; }
 button{ font-family:inherit; }
@@ -87,13 +91,13 @@ h1,h2,h3,h4{
   background: linear-gradient(90deg, var(--saffron), var(--navy) 50%, var(--green));
 }
 
-.section-head{ max-width: 68ch; margin-bottom: 40px; }
+.section-head{ max-width: 68ch; margin-bottom: 28px; }
 .section-head h2{ font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); margin-bottom: 12px; }
 .section-head p{ color: var(--ink-soft); font-size: 1.05rem; }
 .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 .section-head.center .eyebrow{ justify-content:center; }
 
-section{ padding: 88px 0; }
+section{ padding: clamp(40px, 4vw, 56px) 0; }
 .bg-dim{ background: var(--paper-dim); }
 .bg-navy{ background: var(--navy); color: var(--paper); }
 .bg-navy h2, .bg-navy h3{ color: var(--paper); }
@@ -205,7 +209,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 }
 
 /* ---------------- Hero ---------------- */
-.hero{ padding: 60px 0 80px; overflow:hidden; }
+.hero{ padding: 40px 0 56px; overflow:hidden; }
 .hero .container{
   display:grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items:center;
 }
@@ -236,12 +240,12 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   margin-top: 30px; padding: 26px 28px; border-left: 3px solid var(--saffron);
   background: var(--saffron-tint); border-radius: var(--radius); box-shadow: var(--shadow-card);
 }
-.vision-callout h4{
+.vision-callout h3{
   display:flex; align-items:center; gap:8px;
   font-size: 12.5px; text-transform:uppercase; letter-spacing:0.06em; color: var(--saffron-deep);
   font-family: var(--font-body); margin-bottom:10px;
 }
-.vision-callout h4 svg{ width:16px; height:16px; stroke: var(--saffron-deep); fill:none; stroke-width:2; }
+.vision-callout h3 svg{ width:16px; height:16px; stroke: var(--saffron-deep); fill:none; stroke-width:2; }
 .vision-callout p{ margin:0; font-family: var(--font-display); font-size:1.15rem; line-height:1.45; color: var(--navy); font-weight:600; }
 
 .mission-block{ margin-top: 34px; }
@@ -379,7 +383,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 @media (max-width: 700px){ .news-slider{ --news-per-view: 1; --news-gap: 18px; } }
 
 /* ---------------- Get involved ---------------- */
-.involved-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:22px; margin-top: 36px; }
+.involved-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:22px; margin-top: 24px; }
 .involved-card{
   background: var(--paper); border-radius: var(--radius); padding: 28px;
   border:1px solid var(--line); text-align:left;
@@ -458,7 +462,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 /* ---------------- Footer ---------------- */
 footer.site{ background: var(--navy-deep); color: rgba(255,253,248,0.75); padding-top: 64px; }
 .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
-.footer-grid h4{ color: var(--paper); font-size:13px; text-transform:uppercase; letter-spacing:0.06em; font-family:var(--font-body); margin-bottom:16px; }
+.footer-grid h3{ color: var(--paper); font-size:13px; text-transform:uppercase; letter-spacing:0.06em; font-family:var(--font-body); margin-bottom:16px; }
 .footer-grid ul li{ margin-bottom:10px; }
 .footer-grid a:hover{ color: var(--saffron); }
 .footer-brand{ display:flex; gap:12px; margin-bottom:14px; }

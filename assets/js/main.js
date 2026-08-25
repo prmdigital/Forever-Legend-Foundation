@@ -42,6 +42,12 @@
   var stopCount = 0;
   var ticking = false;
 
+  // Auto-advance. Pauses on hover, keyboard focus, touch and background tabs,
+  // and never runs for visitors who ask for reduced motion.
+  var AUTOPLAY_MS = 4500;
+  var autoTimer = null;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Distance from one card's start to the next (card width + gap).
   function step() {
     if (cards.length > 1) {
@@ -95,6 +101,28 @@
     // Nothing to scroll (e.g. 3 cards on a 3-up desktop layout) — hide the controls.
     controls.hidden = stopCount === 0;
     paint();
+    if (stopCount === 0) stopAuto(); else startAuto();
+  }
+
+  function advance() {
+    if (maxScroll() <= 1) return;
+    // Wrap back to the first slide once the end is reached.
+    if (track.scrollLeft >= maxScroll() - 1) {
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    }
+  }
+
+  function startAuto() {
+    if (reduceMotion || autoTimer || stopCount === 0) return;
+    autoTimer = setInterval(advance, AUTOPLAY_MS);
+  }
+
+  function stopAuto() {
+    if (!autoTimer) return;
+    clearInterval(autoTimer);
+    autoTimer = null;
   }
 
   prevBtn.addEventListener('click', function () {
@@ -102,6 +130,15 @@
   });
   nextBtn.addEventListener('click', function () {
     track.scrollBy({ left: step(), behavior: 'smooth' });
+  });
+
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+  slider.addEventListener('focusin', stopAuto);
+  slider.addEventListener('focusout', startAuto);
+  track.addEventListener('pointerdown', stopAuto);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stopAuto(); else startAuto();
   });
 
   track.addEventListener('scroll', function () {
