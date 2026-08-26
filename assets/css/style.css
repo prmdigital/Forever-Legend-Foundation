@@ -28,7 +28,7 @@
   --radius-sm: 4px;
   --radius: 8px;
   --shadow-card: 0 1px 2px rgba(11,31,99,.05), 0 10px 28px rgba(11,31,99,.07);
-  --container: 1280px;
+  --container: 1440px;
 
   --font-display: "Baloo 2", "Segoe UI Rounded", Georgia, serif;
   --font-body: "Noto Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -41,13 +41,17 @@ html{ scroll-behavior: smooth; }
   *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
 
+/* Fluid root. Every rem-based size below scales with it, so the whole
+   type scale grows on a large monitor instead of staying at phone size. */
+html{ font-size: clamp(16px, 15px + 0.22vw, 18px); }
+
 body{
   margin:0;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 /* height:auto is required: the width/height attributes on <img> act as
@@ -79,7 +83,7 @@ h1,h2,h3,h4{
   gap:8px;
   font-family: var(--font-body);
   font-weight:700;
-  font-size: 13px;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--saffron-deep);
@@ -93,7 +97,7 @@ h1,h2,h3,h4{
 
 .section-head{ max-width: 68ch; margin-bottom: 28px; }
 .section-head h2{ font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); margin-bottom: 12px; }
-.section-head p{ color: var(--ink-soft); font-size: 1.05rem; }
+.section-head p{ color: var(--ink-soft); font-size: 1.08rem; }
 .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 .section-head.center .eyebrow{ justify-content:center; }
 
@@ -112,7 +116,7 @@ section{ padding: clamp(40px, 4vw, 56px) 0; }
   padding: 13px 26px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 14.5px;
+  font-size: 0.92rem;
   border: 2px solid transparent;
   cursor:pointer;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
@@ -163,12 +167,12 @@ header.site{
 }
 .brand{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .brand img{ width:42px; height:42px; }
-.brand-name{ font-family: var(--font-display); font-weight:700; font-size:1.08rem; color:var(--navy); line-height:1.1; }
-.brand-name small{ display:block; font-family:var(--font-body); font-weight:600; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
+.brand-name{ font-family: var(--font-display); font-weight:700; font-size:1.12rem; color:var(--navy); line-height:1.1; }
+.brand-name small{ display:block; font-family:var(--font-body); font-weight:600; font-size:0.63rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
 
 nav.primary-nav ul{ display:flex; gap:20px; flex-wrap:wrap; }
 nav.primary-nav a{
-  font-weight:600; font-size:13.8px; color: var(--ink);
+  font-weight:600; font-size:0.92rem; color: var(--ink);
   padding: 6px 2px; border-bottom: 2px solid transparent; white-space:nowrap;
 }
 nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
@@ -214,7 +218,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   display:grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items:center;
 }
 .hero h1{ font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.2rem); margin: 0 0 20px; }
-.hero .lede{ font-size: 1.1rem; color: var(--ink-soft); max-width: 52ch; margin-bottom: 22px; }
+.hero .lede{ font-size: 1.12rem; color: var(--ink-soft); max-width: 52ch; margin-bottom: 22px; }
 .hero .tagline{
   font-family: var(--font-display); font-weight:700; font-size:1.05rem; color: var(--navy);
   margin: 0 0 26px; padding-left:16px; border-left: 3px solid var(--green);
@@ -235,14 +239,14 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   padding: 32px; min-height: 260px;
 }
 .about-media-logo img{ width:100%; max-width:440px; filter: drop-shadow(0 14px 26px rgba(11,31,99,0.16)); }
-.about-copy p{ color: var(--ink-soft); font-size:1.02rem; margin: 0 0 16px; }
+.about-copy p{ color: var(--ink-soft); font-size:1.05rem; margin: 0 0 16px; }
 .vision-callout{
   margin-top: 30px; padding: 26px 28px; border-left: 3px solid var(--saffron);
   background: var(--saffron-tint); border-radius: var(--radius); box-shadow: var(--shadow-card);
 }
 .vision-callout h3{
   display:flex; align-items:center; gap:8px;
-  font-size: 12.5px; text-transform:uppercase; letter-spacing:0.06em; color: var(--saffron-deep);
+  font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.06em; color: var(--saffron-deep);
   font-family: var(--font-body); margin-bottom:10px;
 }
 .vision-callout h3 svg{ width:16px; height:16px; stroke: var(--saffron-deep); fill:none; stroke-width:2; }
@@ -251,10 +255,10 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .mission-block{ margin-top: 34px; }
 .mission-block > h3{ font-size:1.1rem; margin-bottom:16px; }
 .check-list{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-.check-list li{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color: var(--ink); }
+.check-list li{ display:flex; gap:10px; align-items:flex-start; font-size:0.92rem; color: var(--ink); }
 .check-list li .dot{
   flex-shrink:0; width:20px; height:20px; border-radius:50%; margin-top:2px;
-  background: var(--green-tint); color: var(--green-deep); font-size:12px; font-weight:700;
+  background: var(--green-tint); color: var(--green-deep); font-size:0.75rem; font-weight:700;
   display:flex; align-items:center; justify-content:center;
 }
 @media (max-width: 860px){ .about-grid{ grid-template-columns: 1fr; } .check-list{ grid-template-columns:1fr; } }
@@ -281,7 +285,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .objective-item summary::-webkit-details-marker{ display:none; }
 .objective-item summary .titles{ flex:1; min-width:0; }
 .objective-item summary h3{ font-size:1.05rem; margin-bottom:2px; }
-.objective-item summary .tagline{ font-size:13px; color: var(--ink-soft); font-weight:600; }
+.objective-item summary .tagline{ font-size:0.85rem; color: var(--ink-soft); font-weight:600; }
 .objective-item .chev{
   flex-shrink:0; width:22px; height:22px; stroke:var(--navy); fill:none; stroke-width:2;
   transition: transform .2s ease;
@@ -290,7 +294,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .objective-item .content{ padding: 0 24px 26px 94px; }
 /* Cap the measure: full-width prose runs past 150 characters a line on a
    large monitor, which is uncomfortable to read. ~72ch keeps it in range. */
-.objective-item .content p{ color: var(--ink-soft); font-size:14.5px; margin:0 0 14px; max-width: 72ch; }
+.objective-item .content p{ color: var(--ink-soft); font-size:0.95rem; margin:0 0 14px; max-width: 72ch; }
 .objective-item .content .closing{ font-weight:700; color: var(--navy); font-style:normal; }
 @media (max-width: 640px){
   .objective-item summary{ gap:12px; padding: 16px; }
@@ -302,7 +306,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .chip{
   display:flex; align-items:center; gap:12px;
   padding: 16px 18px; background: var(--paper); border:1px solid var(--line); border-radius: var(--radius-sm);
-  font-weight:600; font-size:14.5px;
+  font-weight:600; font-size:0.95rem;
 }
 .chip .dot{ width:10px; height:10px; border-radius:50%; background: var(--saffron); flex-shrink:0; }
 .chip:nth-child(3n+2) .dot{ background: var(--navy); }
@@ -315,7 +319,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .impact-card{ text-align:left; }
 .impact-card .icon-circle{ background: rgba(255,153,51,0.16); margin-bottom:14px; }
 .impact-card .icon-circle svg{ stroke: var(--saffron); }
-.impact-card p{ margin:0; font-size:14.5px; color: rgba(255,253,248,0.85); font-weight:600; line-height:1.5; }
+.impact-card p{ margin:0; font-size:0.95rem; color: rgba(255,253,248,0.85); font-weight:600; line-height:1.5; }
 @media (max-width: 860px){ .impact-grid{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px){ .impact-grid{ grid-template-columns: 1fr; } }
 
@@ -326,7 +330,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .gallery-item .cap{
   position:absolute; left:0; right:0; bottom:0; padding: 10px 12px;
   background: linear-gradient(0deg, rgba(7,20,64,0.85), transparent);
-  color: var(--paper); font-size:12.5px; font-weight:700;
+  color: var(--paper); font-size:0.8rem; font-weight:700;
 }
 @media (max-width: 900px){ .gallery-grid{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px){ .gallery-grid{ grid-template-columns: 1fr; } }
@@ -391,9 +395,9 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   border:1px solid var(--line); text-align:left;
 }
 .involved-card h3{ font-size:1.1rem; margin: 14px 0 8px; }
-.involved-card p{ font-size:14px; color:var(--ink-soft); margin:0 0 14px; }
+.involved-card p{ font-size:0.95rem; color:var(--ink-soft); margin:0 0 14px; }
 .involved-card ul{ margin: 0 0 18px; }
-.involved-card ul li{ font-size:13.5px; padding-left:16px; position:relative; margin-bottom:6px; color: var(--ink);}
+.involved-card ul li{ font-size:0.92rem; padding-left:16px; position:relative; margin-bottom:6px; color: var(--ink);}
 .involved-card ul li::before{ content:"—"; position:absolute; left:0; color: var(--saffron-deep); }
 
 /* Donation QR. .qr-frame sizes both the placeholder and the real <img>,
@@ -421,11 +425,11 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 }
 .qr-frame.is-placeholder svg{ width:72px; height:72px; fill: var(--navy); opacity:0.3; }
 .qr-frame.is-placeholder span{
-  font-size:11px; font-weight:700; letter-spacing:0.03em;
+  font-size:0.7rem; font-weight:700; letter-spacing:0.03em;
   text-transform:uppercase; color: var(--ink-soft);
 }
 .qr-note{
-  font-size:12.5px; font-weight:700; color: var(--ink-soft);
+  font-size:0.8rem; font-weight:700; color: var(--ink-soft);
   margin:14px 0 0; text-align:center;
 }
 @media (max-width: 900px){
@@ -448,14 +452,14 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 .contact-form{ display:grid; gap:14px; align-content:start; }
 .contact-form input, .contact-form textarea{
   width:100%; padding: 13px 16px; border-radius: var(--radius-sm);
-  border: 1px solid var(--line); font-family:inherit; font-size:14.5px;
+  border: 1px solid var(--line); font-family:inherit; font-size:0.95rem;
   background: var(--paper);
 }
 .contact-form textarea{ min-height:120px; resize:vertical; }
 .contact-form input:focus, .contact-form textarea:focus{ outline: 2px solid var(--saffron); outline-offset:1px; }
 .contact-form button{ justify-self:start; }
 .contact-list{ display:grid; gap:16px; margin-top:24px; }
-.contact-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; }
+.contact-list li{ display:flex; gap:12px; align-items:flex-start; font-size:0.95rem; }
 /* Fixed-width icon column keeps every row's text starting at the same x,
    regardless of the differing glyph widths of the emoji. */
 .contact-list .ci{ flex:0 0 22px; text-align:center; line-height:1.55; }
@@ -464,7 +468,7 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
 /* ---------------- Footer ---------------- */
 footer.site{ background: var(--navy-deep); color: rgba(255,253,248,0.75); padding-top: 64px; }
 .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; }
-.footer-grid h3{ color: var(--paper); font-size:13px; text-transform:uppercase; letter-spacing:0.06em; font-family:var(--font-body); margin-bottom:16px; }
+.footer-grid h3{ color: var(--paper); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; font-family:var(--font-body); margin-bottom:16px; }
 .footer-grid ul li{ margin-bottom:10px; }
 .footer-grid a:hover{ color: var(--saffron); }
 .footer-brand{ display:flex; gap:12px; margin-bottom:14px; }
@@ -478,7 +482,7 @@ footer.site{ background: var(--navy-deep); color: rgba(255,253,248,0.75); paddin
 .footer-bottom{
   border-top: 1px solid rgba(255,253,248,0.12);
   padding: 20px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-  font-size:13px;
+  font-size:0.85rem;
 }
 @media (max-width: 860px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px){ .footer-grid{ grid-template-columns: 1fr; } }
