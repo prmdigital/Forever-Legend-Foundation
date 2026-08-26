@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prmdigital.github.io/Forever-Legend-Foundation/sitemap.xml
+Sitemap: https://foreverlegendfoundation.com/sitemap.xml
