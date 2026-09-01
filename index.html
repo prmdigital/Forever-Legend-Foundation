@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=17">
+<link rel="stylesheet" href="assets/css/style.css?v=18">
 
 <!--
   Structured data. Tells Google this is an NGO, who to contact, and what the
@@ -470,23 +470,9 @@
           </ul>
           <a href="#contact" class="btn btn-primary">Donate Now</a>
         </div>
-        <!--
-          PAYMENT QR — when the real code is ready, drop the image into
-          assets/img/donate-qr.png and replace the <div class="qr-frame"> block
-          below with a single line:
-            <img class="qr-frame" src="assets/img/donate-qr.png" alt="UPI QR code to donate to Forever Legend Foundation">
-          Keep the .donate-qr wrapper and the .qr-note caption so spacing holds.
-        -->
         <div class="donate-qr">
-          <div class="qr-frame is-placeholder" role="img" aria-label="Donation QR code — coming soon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 3h7v7H3V3zm2 2v3h3V5H5z"/>
-              <path d="M14 3h7v7h-7V3zm2 2v3h3V5h-3z"/>
-              <path d="M3 14h7v7H3v-7zm2 2v3h3v-3H5z"/>
-              <path d="M13 13h3v3h-3zM18 13h3v2h-3zM17 17h2v2h-2zM20 18h1v3h-3v-1h2z"/>
-            </svg>
-            <span>QR coming soon</span>
-          </div>
+          <h3 class="qr-heading">Your One Scan Can Change a Life</h3>
+          <img class="qr-frame" src="assets/img/donate-qr.png" alt="UPI QR code to donate to Forever Legend Foundation" width="800" height="800" loading="lazy" decoding="async">
           <p class="qr-note">Scan to donate via UPI</p>
         </div>
       </div>

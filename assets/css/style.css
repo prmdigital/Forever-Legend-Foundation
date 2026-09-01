@@ -416,14 +416,9 @@ nav.primary-nav a:hover{ border-bottom-color: var(--saffron); }
   border-radius: var(--radius); background: var(--paper);
   border:1px solid var(--line); object-fit:contain; padding:12px;
 }
-.qr-frame.is-placeholder{
-  border:2px dashed var(--line); background: var(--paper-dim);
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
-}
-.qr-frame.is-placeholder svg{ width:72px; height:72px; fill: var(--navy); opacity:0.3; }
-.qr-frame.is-placeholder span{
-  font-size:11px; font-weight:700; letter-spacing:0.03em;
-  text-transform:uppercase; color: var(--ink-soft);
+.qr-heading{
+  font-size:1.05rem; line-height:1.3; text-align:center;
+  color: var(--navy); margin:0 0 14px; max-width: 18ch;
 }
 .qr-note{
   font-size:12.5px; font-weight:700; color: var(--ink-soft);
